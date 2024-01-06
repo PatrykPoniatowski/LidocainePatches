@@ -6,11 +6,10 @@ The data concerning lidocaine patches were retrieved using the BNF coding for li
 
 BNF codes for lidocaine patches for data from 2020 until 2023 were taken from the SNOMED - BNF mapping document published in October 2023 - direct link to the source - [SNOMED - BNF Mapping data](https://www.nhsbsa.nhs.uk/sites/default/files/2023-12/BNF%20Snomed%20Mapping%20data%2020231215.zip).
 
-1502010J0AAELEL | Lidocaine 5% medicated plasters
-1502010I0BEAAAG | Lidoderm 5% patches
-1502010J0BSAAEL | Versatis 700mg medicated plasters
-
-and a BNF code: 0407030ACBBAAAA, which appeared in the data from 2018 and 2019.
+- 1502010J0AAELEL | Lidocaine 5% medicated plasters
+- 1502010I0BEAAAG | Lidoderm 5% patches
+- 1502010J0BSAAEL | Versatis 700mg medicated plasters
+- and a BNF code: 0407030ACBBAAAA, which appeared in the data from 2018 and 2019.
 
 First step:
 Retrieving all the data about prescribing lidocaine patches and saving it into one file.
@@ -25,7 +24,7 @@ import pandas as pd
 def consolidate_filtered_data(input_dir, bnf_codes):
     consolidated_df = pd.DataFrame()  # Create an empty DataFrame to hold consolidated data
 
-    # List all CSV files in the input directory
+    List all CSV files in the input directory
     for file in os.listdir(input_dir):
         if file.endswith('.csv'):
             file_path = os.path.join(input_dir, file)
@@ -61,15 +60,15 @@ Second Step – Clarifying the Codes and Allocating Them to Particular Health Bo
 
 Appropriate references were found on the [ONS Geoportal website](https://geoportal.statistics.gov.uk/maps/ons::local-health-boards-april-2019-names-and-codes-in-wales-1), which helps to align each Health Board with its appropriate code:
 
-7A1: Betsi Cadwaladr University Health Board
-7A2: Hywel Dda University Health Board
-7A3: Abertawe Bro Morgannwg University Health Board
-7A4: Cardiff and Vale University Health Board
-7A5: Cwm Taf University Health Board
-7A6: Aneurin Bevan University Health Board
-7A7: Powys Teaching Health Board
-RQF: Velindre NHS Trust
-RT4: Welsh Ambulance Services NHS Trust
+-7A1: Betsi Cadwaladr University Health Board
+-7A2: Hywel Dda University Health Board
+-7A3: Abertawe Bro Morgannwg University Health Board
+-7A4: Cardiff and Vale University Health Board
+-7A5: Cwm Taf University Health Board
+-7A6: Aneurin Bevan University Health Board
+-7A7: Powys Teaching Health Board
+-RQF: Velindre NHS Trust
+-RT4: Welsh Ambulance Services NHS Trust
 I have conducted a search to determine whether the codes have changed in line with changes to the borders of Health Boards in the last five years. To my knowledge, the codes have remained the same during this period.
 
 Furthermore, while cleaning the data, I noticed that data from April 2018 was misplaced. I have corrected this by moving it from column 'M' to column 'A' and assigning it to the correct values.
