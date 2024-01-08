@@ -24,9 +24,10 @@ plt.xlabel('Date')
 plt.ylabel('Total Items Prescribed')
 plt.xticks(rotation=45)
 
-# Position the legend outside the plot area in the top right corner
-# Adjust the bbox_to_anchor values as needed for your specific plot
-plt.legend(title='Health Board', loc='center', bbox_to_anchor=(-0.5, 0), ncol=1, fontsize='small', frameon=True)
+# Position the legend below the plot
+plt.legend(title='Health Board', bbox_to_anchor=(0.5, -0.15), loc='upper center', ncol=3)
 
-plt.tight_layout()
+# Adjust layout
+plt.tight_layout(rect=[0, 0.03, 1, 0.95])
+
 plt.show()
