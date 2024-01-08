@@ -10,8 +10,10 @@ file_path = r'C:\Users\ponia\OneDrive\Desktop\lidocaine plaster analysis\Updated
 # Load the data
 data = pd.read_csv(file_path)
 
+# Convert 'date' column to datetime format
 data['date'] = pd.to_datetime(data['date'], dayfirst=True)
 
+# Aggregate data by Health Board and date
 trend_data = data.groupby(['Health Board', 'date']).agg({'Items': 'sum', 'ActCost': 'sum', 'Quantity': 'sum'}).reset_index()
 
 # Plotting trends over time for each health board
@@ -21,6 +23,10 @@ plt.title('Trend of Items Prescribed Over Time by Health Board')
 plt.xlabel('Date')
 plt.ylabel('Total Items Prescribed')
 plt.xticks(rotation=45)
-plt.legend(title='Health Board', bbox_to_anchor=(1.05, 1), loc='upper left')
+
+# Position the legend outside the plot area in the top right corner
+# Adjust the bbox_to_anchor values as needed for your specific plot
+plt.legend(title='Health Board', loc='center', bbox_to_anchor=(-0.5, 0), ncol=1, fontsize='small', frameon=True)
+
 plt.tight_layout()
 plt.show()
