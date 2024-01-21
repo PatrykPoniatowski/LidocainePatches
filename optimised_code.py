@@ -23,13 +23,13 @@ def consolidate_filtered_data(input_dir, bnf_codes):
     consolidated_df.to_csv(output_file, index=False)
 
 def map_health_boards(data, file_path):
-    # Mapping of 'Code HB' to 'Health Board'
+    # Updated Mapping of 'Code HB' to 'Health Board'
     health_board_mapping = {
         '7A1': 'Betsi Cadwaladr University Health Board',
         '7A2': 'Hywel Dda University Health Board',
-        '7A3': 'Abertawe Bro Morgannwg University Health Board',
+        '7A3': 'Swansea Bay University Local Health Board',  # Updated
         '7A4': 'Cardiff and Vale University Health Board',
-        '7A5': 'Cwm Taf University Health Board',
+        '7A5': 'Cwm Taf Morgannwg University Local Health Board',  # Updated
         '7A6': 'Aneurin Bevan University Health Board',
         '7A7': 'Powys Teaching Health Board',
         'RQF': 'Velindre NHS Trust',
@@ -54,7 +54,11 @@ def apply_date_conversion(df):
 
 # Define input directory and BNF codes (replace with actual values)
 input_directory = 'path_to_input_directory'
-bnf_codes = ['1502010J0AAELEL', '1502010I0BEAAAG', '1502010J0BSAAEL', '0407030ACBBAAAA']  # Replace with actual BNF codes
+# Updated BNF codes
+bnf_codes = [
+    '1502010J0AAELEL', '1502010J0BWAAEL', '0407030ACBBAAAA',
+    '1502010J0BSAAEL', '1502010I0BEAAAG', '0407030ACAAAAAA'
+]
 
 # Consolidate and filter data
 consolidate_filtered_data(input_directory, bnf_codes)
