@@ -11,6 +11,7 @@ BNF codes for lidocaine patches for data from 2020 until 2023 were taken from th
 - 1502010J0BSAAEL | Versatis 700mg medicated plasters
 - and a BNF code: 0407030ACBBAAAA, which appeared in the data from 2018 and 2019.
 
+
 First step:
 Retrieving all the data about prescribing lidocaine patches and saving it into one file.
 
@@ -55,4 +56,17 @@ Here is a direct link to the final file:
 To make this process as efficient as possible, I've optimised the code and written it in one script. This script is saved as 'optimised_code.py' and, if used, needs to be adjusted to the user's needs (e.g., change of BNF codes, Health Boards, and local directorates
 
 
+Update (21/1/2024 regarding BNF codes)
 
+After reviewing all the code and all the possible resources, I've noticed significant variations in values. Consequently, I've double-checked step-by-step all the steps taken in this project to spot errors.
+
+During an in-depth analysis, I noticed that the codes for Lidocaine patches changed after 2019; instead of 4, there are now 6 codes for Lidocaine Patches:
+
+-1502010J0AAELEL (previous search analysis included this code) - Lidocaine 5% medicated plasters
+-1502010J0BWAAEL (previous search analysis did not include this code) - Ralvo 700mg medicated plasters
+-0407030ACBBAAAA (previous search analysis included this code) - Versatis 700mg medicated plasters
+-1502010J0BSAAEL (previous search analysis included this code) - Versatis 700mg medicated plasters
+-1502010I0BEAAAG (interestingly, this code was included in the search analysis but was not included in a different analysis performed by another user) - Lidoderm 5% patches
+-0407030ACAAAAAA (previous search analysis did not include this code) - again, interestingly, a different analysis used this code, but I was unable to find a reference to this code in the BNF SNOMED code references.
+
+Based on these conclusions, the whole code was updated and the analysis was done again 
