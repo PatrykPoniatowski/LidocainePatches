@@ -70,3 +70,11 @@ During an in-depth analysis, I noticed that the codes for Lidocaine patches chan
 -0407030ACAAAAAA (previous search analysis did not include this code) - again, interestingly, a different analysis used this code, but I was unable to find a reference to this code in the BNF SNOMED code references.
 
 Based on these conclusions, the whole code was updated and the analysis was done again 
+
+15-22/01/2024
+
+Based on all of the reviews, the entire code was updated. The file "Lidocaine_patches_analysis" contains all of the analysis, including the number of Lidocaine patches dispensed per 1000 people.
+
+Since GitHub might be a challenging source of knowledge for clinicians, for the purpose of this project, I've created a Microsoft Power BI dashboard with all of the appropriate indicators, which should help in making clinical data-driven decisions.
+
+As previously mentioned, this whole project stems from personal interest. All of the feedback is highly appreciated.
